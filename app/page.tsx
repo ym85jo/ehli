@@ -32,8 +32,17 @@ const socialLinks = [
   },
 ];
 
-export default async function Home() {
-  const posts = await getPublishedPosts();
+interface HomeProps {
+  searchParams: Promise<{
+    tag?: string;
+  }>;
+}
+
+export default async function Home({ searchParams }: HomeProps) {
+  const { tag } = await searchParams;
+  const searchedTag = tag || '전체';
+
+  const posts = await getPublishedPosts(searchedTag);
   const tags = await getTags();
 
   return (
@@ -41,7 +50,7 @@ export default async function Home() {
       <div className="grid grid-cols-[220px_1fr_220px] gap-6">
         {/* 사이드바 */}
         <aside>
-          <TagSection tags={tags} />
+          <TagSection tags={tags} selectedTag={searchedTag} />
         </aside>
 
         {/* MAIN */}
