@@ -170,6 +170,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
                   </CardTitle>
                   <CardDescription className="line-clamp-2">
                     Next.js를 시작하는 방법부터 프로젝트 구조, 기본 설정까지 상세히 알아봅니다.
+                    테스트
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -191,6 +192,7 @@ export default async function BlogPost({ params }: BlogPostProps) {
             </Link>
           </nav>
         </section>
+
         <aside className="relative">
           <div className="sticky top-[var(--sticky-top)]">
             <div className="bg-muted/50 space-y-4 rounded-lg p-6 backdrop-blur-sm">
