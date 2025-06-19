@@ -43,6 +43,7 @@ export default async function Home({ searchParams }: HomeProps) {
   const searchedTag = tag || '전체';
 
   const posts = await getPublishedPosts(searchedTag);
+
   const tags = await getTags();
 
   return (

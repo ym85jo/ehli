@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next';
+import createMDX from '@next/mdx';
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -13,6 +14,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  // 필요한 마크다운 플러그인 추가 가능
+  
+});
+
+export default withMDX(nextConfig);
