@@ -1,15 +1,28 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { Github, Instagram, Youtube } from 'lucide-react';
 import Image from 'next/image';
 
-interface ProfileSectionProps {
-  socialLinks: {
-    icon: React.ElementType;
-    href: string;
-  }[];
-}
+const socialLinks = [
+  {
+    icon: Github,
+    href: 'https://github.com/jimin-dev',
+  },
+  {
+    icon: Youtube,
+    href: 'https://github.com/jimin-dev',
+  },
+  {
+    icon: Instagram,
+    href: 'https://github.com/jimin-dev',
+  },
+  {
+    icon: Instagram,
+    href: 'https://github.com/jimin-dev',
+  },
+];
 
-export default function ProfileSection({ socialLinks }: ProfileSectionProps) {
+export default function ProfileSection() {
   return (
     <Card>
       <CardContent className="pt-6">

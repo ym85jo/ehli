@@ -5,6 +5,8 @@ import './globals.css';
 import Header from '@/components/layouts/Header';
 import Footer from '@/components/layouts/Footer';
 
+import Providers from './providers';
+
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -28,13 +30,15 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <div className="flex h-screen flex-col">
-          <Header />
+        <Providers>
+          <div className="flex h-screen flex-col">
+            <Header />
 
-          <main className="flex-1">{children}</main>
+            <main className="flex-1">{children}</main>
 
-          <Footer />
-        </div>
+            <Footer />
+          </div>
+        </Providers>
       </body>
     </html>
   );
