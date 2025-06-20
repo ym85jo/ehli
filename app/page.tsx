@@ -18,7 +18,7 @@ interface HomeProps {
 export default async function Home({ searchParams }: HomeProps) {
   const { tag, sort } = await searchParams;
   const selectedTag = tag || '전체';
-  const selectedSort = sort || '최신순';
+  const selectedSort = sort || 'latest';
   const tags = getTags();
   const postsPromise = getPublishedPosts({ tag: selectedTag, sort: selectedSort });
 
