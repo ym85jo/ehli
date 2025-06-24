@@ -24,8 +24,15 @@ const eslintConfig = [
     },
     rules: {
       // 여기에 추가적인 규칙을 설정할 수 있습니다
-      'no-unused-vars': 'warn',
-      'no-console': 'warn',
+      // 사용하지 않는 변수에 대한 경고 설정
+      // args: 'none' - 함수 매개변수는 사용하지 않아도 경고하지 않음
+      'no-unused-vars': [
+        'warm',
+        {
+          args: 'none',
+        },
+      ],
+      // 'no-console': 'warn',
     },
   },
   eslintConfigPrettier,

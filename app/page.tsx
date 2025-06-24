@@ -2,11 +2,11 @@ import ProfileSection from '@/app/_components/ProfileSection';
 import ContactSection from '@/app/_components/ContactSection';
 import { getPublishedPosts, getTags } from '@/lib/notion';
 import HeaderSection from './_components/HeaderSection';
-import PostListSuspense from '@/components/features/blog/PostListSuspense';
 import { Suspense } from 'react';
 import TagSectionClient from './_components/TagSection.Client';
 import TagSectionSkeleton from './_components/TagSectionSkeleton';
 import PostListSkeleton from '@/components/features/blog/PostListSkeleton';
+import PostListSuspense from '@/components/features/blog/PostListSuspense';
 
 interface HomeProps {
   searchParams: Promise<{
@@ -24,16 +24,16 @@ export default async function Home({ searchParams }: HomeProps) {
 
   return (
     <div className="container py-8">
-      <div className="grid grid-cols-[220px_1fr_220px] gap-6">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-[220px_1fr_220px]">
         {/* 사이드바 */}
-        <aside>
+        <aside className="order-2 md:order-none">
           <Suspense fallback={<TagSectionSkeleton />}>
             <TagSectionClient tags={tags} selectedTag={selectedTag} />
           </Suspense>
         </aside>
 
         {/* MAIN */}
-        <div className="space-y-8">
+        <div className="order-3 space-y-8 md:order-none">
           {/* 섹션 제목 */}
           <HeaderSection selectedTag={selectedTag} />
           <Suspense fallback={<PostListSkeleton />}>
@@ -42,7 +42,7 @@ export default async function Home({ searchParams }: HomeProps) {
         </div>
 
         {/* 사이드바 */}
-        <aside className="flex flex-col gap-4">
+        <aside className="order-1 flex flex-col gap-4 md:order-none">
           <ProfileSection />
           <ContactSection />
         </aside>

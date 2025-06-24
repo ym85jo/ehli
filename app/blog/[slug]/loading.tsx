@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
-    <div className="container py-8">
-      <div className="grid grid-cols-[220px_1fr_220px] gap-6">
+    <div className="container py-6 md:py-8 lg:py-12">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-[240px_1fr_240px] md:gap-8">
         {/* 사이드바 */}
         <aside>
           <div className="space-y-4">
