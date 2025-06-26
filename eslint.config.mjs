@@ -29,7 +29,7 @@ const eslintConfig = [
       'no-unused-vars': [
         'warm',
         {
-          args: 'none',
+          args: 'off',
         },
       ],
       // 'no-console': 'warn',
