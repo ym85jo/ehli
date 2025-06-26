@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'JO.Y.M',
-  description: 'JO.Y.M',
+  title: 'Jo Yeong Min',
+  description: 'Jo Yeong Min',
 };
 
 export default function RootLayout({
